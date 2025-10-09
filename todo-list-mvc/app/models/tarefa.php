@@ -7,7 +7,7 @@ class Tarefa{
 
 public function __construct(){
     $db = new Database();
-    $this->conn = $db.conectar();
+    $this->conn = $db->conectar();
     
 }
 
