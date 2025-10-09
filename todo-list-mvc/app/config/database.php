@@ -14,7 +14,7 @@
         if ($this->conn->connect_error) {
                 die("Deu Erro:" . $this->conn->connect_error);
         }   
-        return$this ->conn;
+        return $this ->conn;
     }
 
    }
