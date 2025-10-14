@@ -1,11 +1,17 @@
 <?php 
-require_once __DIR__ .'/../model/tarefa.php';
+require_once __DIR__ .'/../models/tarefa.php';
 class  tarefaController{
     private $tarefaModel;
 private function __construct(){
  $this->tarefaModel= new Tarefa();
 
 
+}
+## Listar 
+public function index(){
+$tarefas= $this ->tarefaModel->listar();
+include __DIR__.'/../.views/listar.php';
+    
 }
 ## Criar 
 public function criar (){
