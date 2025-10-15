@@ -3,18 +3,18 @@
 
 require_once __DIR__ .'/app/controllers/tarefaController.php';
 
-$conttrollers = new tarefaController();
+$controllers = new tarefaController();
 $action =$_GET['action']?? 'index';
 switch ($action) {
     case 'criar':
-       $conttroller->criar();
+       $controllers->criar();
     
         break;
     case 'excluir':
-      $conttroller->excluir();
+      $controllers->excluir();
         break;
     default:
-       $conttroller->index();
+       $controllers->index();
         break;
 }
 

@@ -2,7 +2,7 @@
 require_once __DIR__ .'/../models/tarefa.php';
 class  tarefaController{
     private $tarefaModel;
-private function __construct(){
+public function __construct(){
  $this->tarefaModel= new Tarefa();
 
 
