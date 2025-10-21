@@ -3,11 +3,11 @@
 # Conexão com o banco de dados
 
 $localhost = 'localhost'; 
-$usario = 'root';
+$usuario = 'root';
 $senha = '';
 $database = 'todo_list'; 
 
-$conn = new mysqli($localhost,$usario,$senha, $database);
+$conn = new mysqli($localhost,$usuario,$senha, $database);
 
 if($conn->connect_error){
     die('Deu erro na conexão'. $conn->connect_error);
@@ -20,6 +20,7 @@ if(isset($_POST['descricao']) && !empty(trim($_POST['descricao']))){
 
     if($conn->query($sqlInsert) === TRUE){
         header("location: todo-list2.php") ; 
+        exit;
     }
 }
 
@@ -29,9 +30,10 @@ if(isset($_POST['descricao']) && !empty(trim($_POST['descricao']))){
 
 if (isset($_GET['delete'])) {
     $id = intval($_GET['delete']);
-    $sqlDelete = "DELETE FROM tarefa  WHERE id = $id";
+    $sqlDelete = "DELETE FROM tarefas  WHERE id = $id";
     if ($conn->query($sqlDelete) ===TRUE) {
         header("location: todo-list2.php");
+        exit;
     }
 }
 

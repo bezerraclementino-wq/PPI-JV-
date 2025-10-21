@@ -22,9 +22,9 @@ public function listar (){
             $tarefas[]=$row;
 
         }
-        return $tarefas;
+        
     }
-
+        return $tarefas;
 }
 
 ##Criar 
@@ -40,7 +40,7 @@ return $this->conn->query($sql);
 public function excluir($id){
 
 $id = intval($id);
-$sql = "DELETE * FROM tarefas WHERE id = $id";
+$sql = "DELETE FROM tarefas WHERE id = $id";
 return $this->conn->query($sql);
 
 }
