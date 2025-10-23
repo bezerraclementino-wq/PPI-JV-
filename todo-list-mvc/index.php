@@ -1,20 +1,25 @@
-<?php 
+<?php
+require_once __DIR__ . '/app/controllers/TarefaController.php';
 
+$controller = new TarefaController(); 
 
-require_once __DIR__ .'/app/controllers/tarefaController.php';
+$action = $_GET['action'] ?? 'index' ; 
 
-$controller = new tarefaController();
-$action =$_GET['action']?? 'index';
 switch ($action) {
     case 'criar':
-       $controller->criar();
-    
+        $controller->criar();
         break;
     case 'excluir':
-      $controller->excluir();
+        $controller->excluir();
+        break;
+    case 'editar':
+        $controller->editar();
+        break;
+    case 'atualizar':
+        $controller->atualizar();
         break;
     default:
-       $controller->index();
+        $controller->index();
         break;
 }
 
