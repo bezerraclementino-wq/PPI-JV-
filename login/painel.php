@@ -1,5 +1,5 @@
 <?php 
-
+include('protect.php');
 
 ?>
 <!DOCTYPE html>
@@ -10,6 +10,7 @@
     <title>Document</title>
 </head>
 <body>
-    Bem-Vindo ao painel <?php echo $_SESSION['nome']?>
+    Bem-Vindo ao painel, <?php echo $_SESSION['nome']?>
+   <P>  <a href="logout.php">Sair </a> </P>
 </body>
 </html>

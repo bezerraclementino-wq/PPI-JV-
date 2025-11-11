@@ -5,12 +5,12 @@ if (isset($_POST['email']) || isset( $_POST['senha'])) {
         echo "Preencher seu Email";
     }
     else if (strlen($_POST["senha"]) == 0) {
-        echo "Prencha sua Senha";
+        echo "Preencha sua Senha";
     }else {
         $email = $mysqli->real_escape_string($_POST["email"]);
         $senha = $mysqli->real_escape_string($_POST["senha"]);
 
-        $sql = "SELECT * FROM usuarios WHERE email = $email'' AND senha =$senha''  ";
+        $sql = "SELECT * FROM usuarios WHERE email = '$email' AND senha ='$senha' ";
           $listar_usuario = $mysqli->query($sql);
           $quantidade = $listar_usuario->num_rows;
           if ($quantidade == 1) {
