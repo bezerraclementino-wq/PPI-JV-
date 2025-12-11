@@ -1,5 +1,6 @@
 <?php
 
+
 if (!isset($_SESSION['id'])) {
     die("Você não está logado.<p> <a href=\"login.php\">SAIR</a></p>");
 }
